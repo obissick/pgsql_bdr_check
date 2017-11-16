@@ -2,6 +2,12 @@
 
 Script to make a proxy (ie HAProxy) capable of monitoring PostgreSQL BDR Cluster nodes properly.
 
+## Requirements ##
+* python 2.7+
+* python-pip
+* psycopg2 (install with pip)
+* ConfigParser (install with pip)
+
 ## Usage ##
 Below is a sample configuration for HAProxy on the client. The point of this is that the application will be able to connect to localhost port 5432, so although we are using BDR Cluster with several nodes, the application will see this as a single BDR server running on localhost.
 
@@ -31,9 +37,9 @@ PostgreSQL connectivity is checked via HTTP on port 9200. The clustercheck scrip
 ## Setup with xinetd ##
 This setup will create a process that listens on TCP port 9200 using xinetd. This process uses the clustercheck script from this repository to report the status of the node.
 
-First, create a database user that will be doing the checks.
+First, create a database user that will be doing the checks. User must have superuser privilege.
 
-    pgsql>
+    pgsql>CREATE USER name WITH SUPERUSER;
 
 Copy the files from the repository to a location (`/usr/bin` in the example below) and make it executable. Then add the following service to xinetd (make sure to match your location of the script with the 'server'-entry).
 
