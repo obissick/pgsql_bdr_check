@@ -2,6 +2,9 @@
 
 Script to make a proxy (ie HAProxy) capable of monitoring PostgreSQL BDR Cluster nodes properly.
 
+![alt text][logo]
+[logo]:https://documents.greathealthworks.com/products/files/httphandlers/filehandler.ashx?action=view&fileid=3863&version=0&doc=SURuOUR2bXJSZEUyNnJpUGUxTnRkTHZaT1J2dzFZZzFEZk1MeHN4TUVaRT0_IjM4NjMi0 "HAProxy"
+
 ## Requirements ##
 * xinetd
 * python 2.7+
