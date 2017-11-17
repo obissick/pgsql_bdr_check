@@ -1,4 +1,4 @@
-## PostgresBDRChecker ##
+## PgSQLBDRChecker ##
 
 Script to make a proxy (ie HAProxy) capable of monitoring PostgreSQL BDR Cluster nodes properly.
 
